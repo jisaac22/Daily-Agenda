@@ -5,15 +5,25 @@ var timeSlot = new Date();
  hours = timeSlot.setHours(8);
  console.log(hours);
 
- var nineAm = $("9am");
- var NINEam = moment("9:00", "HH:mm A");
+ var nineAm = document.getElementById("#9am");
+ var NINEam = moment().format("09", "hh a");
+ var tenAm = moment().format("10", "hh a");
+ var elevanAm = moment().format("11", "hh a");
+ var twelvePm = moment().format("12", "hh a");
+ var onePm = moment().format("01", "hh a");
+ var twoPm = moment().format("02", "hh a");
+ var threePm = moment().format("03", "hh a");
+ var fourPm = moment().format("04", "hh a");
+ var fivePm = moment().format("05", "hh a");
  console.log(NINEam)
  var time = moment().format("h:mm:ss a");
  console.log(time);
 
-var unixFormat = moment.unix(1622638972085).format("hh:mm:ss")
+ if (NINEam < nineAm){
+     nineAm.classList.add("future");
+ }
 
-console.log(unixFormat)
+
 
  function timeUpdate(){
  time = moment().format("h:mm:ss a");
