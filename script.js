@@ -2,12 +2,18 @@
 var date = moment();
 $("#currentDay").text(date.format("dddd: MMM Do, YYYY"));
 var timeSlot = new Date();
- hours = timeSlot.getHours(8);
+ hours = timeSlot.setHours(8);
  console.log(hours);
 
  var nineAm = $("9am");
+ var NINEam = moment("9:00", "HH:mm A");
+ console.log(NINEam)
  var time = moment().format("h:mm:ss a");
  console.log(time);
+
+var unixFormat = moment.unix(1622638972085).format("hh:mm:ss")
+
+console.log(unixFormat)
 
  function timeUpdate(){
  time = moment().format("h:mm:ss a");
